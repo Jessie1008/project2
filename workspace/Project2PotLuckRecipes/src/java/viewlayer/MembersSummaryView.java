@@ -5,12 +5,15 @@
  */
 package viewlayer;
 
+import businesslayer.MembersBusinessLogic;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import transferobjects.Member;
 
 /**
  *
@@ -35,10 +38,47 @@ public class MembersSummaryView extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet MembersSummaryView</title>");            
+            out.println("<title>Servlet MembersSummaryView   Chunyan Wang</title>");            
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet MembersSummaryView at " + request.getContextPath() + "</h1>");
+            MembersBusinessLogic logic=new MembersBusinessLogic();
+            List<Member> members=logic.getAllMembers();
+            out.println("<table border=\"1\">");
+            out.println("<tr>");
+            out.println("<td>MemberID</td>");
+            out.println("<td>IsAdmin</td>");
+            out.println("<td>FirstName</td>");
+            out.println("<td>LastName</td>");
+            out.println("<td>Alias</td>");
+            out.println("<td>Email</td>");
+            out.println("<td>Salt</td>");
+            out.println("<td>UserName</td>");
+            out.println("<td>Password</td>");
+            out.println("</tr>");
+            for( Member member : members ){
+                out.printf("<tr>"
+                        + "<td>%d</td>"
+                        + "<td>%s</td>"
+                        + "<td>%s</td>"
+                        + "<td>%s</td>"
+                        + "<td>%s</td>"
+                        + "<td>%s</td>"
+                        + "<td>%s</td>"
+                        + "<td>%s</td>"
+                        + "<td>%s</td>"
+                        + "</tr>",
+                        member.getMemberID(),
+                        member.getAdmin(),
+                        member.getFirstName(),
+                        member.getLastName(),
+                        member.getAlias(),
+                        member.getEmail(),
+                        member.getSalt(),
+                        member.getUserName(),
+                        member.getPassword());
+            }
+            out.println("</table>");            
             out.println("</body>");
             out.println("</html>");
         }

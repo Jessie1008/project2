@@ -47,11 +47,21 @@ public  class Member {
 	 */
 	private String email;
 	
+        private String salt;
 	
 	private ArrayList<Recipe> recipeList;
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
 	/**
 	 * Default constructor.
 	 */
+        
 	public Member(){
 		recipeList=new ArrayList<>();
 		
@@ -175,6 +185,7 @@ public  class Member {
 		this.firstName=memberBuilder.getFirstName();
 		this.lastName=memberBuilder.getLastName();
 		this.email=memberBuilder.getEmail();
+                this.salt=memberBuilder.getSalt();
 	}
 	/**
 	 * getPassword

@@ -21,6 +21,7 @@ public class MemberBuilder {
 	private String firstName;
 	private String lastName;
 	private String email;
+        private String salt;
 
 	/**
 	 * default constructor
@@ -43,11 +44,16 @@ public class MemberBuilder {
 /**
  * build member
  * @return
- * an reference of the new object of Administrator
+ * an reference of the new object of Member
  */
-	public Member buildAdministrator() {
+	public Member build() {
 		return new Member(this);
 	}
+
+    public String getSalt() {
+        return salt;
+    }
+        
 
 	/**
 	 * getPassword
@@ -227,5 +233,8 @@ public class MemberBuilder {
 		return this;
 	}
 	
-
+public MemberBuilder salt(String salt){
+    this.salt=salt;
+    return this;
+}
 }
