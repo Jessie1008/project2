@@ -35,7 +35,7 @@ public class TagsSummaryView extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet CategoriesSummaryView</title>");            
+            out.println("<title>Servlet TagsSummaryView</title>");            
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet CategoriesSummaryView at " + request.getContextPath() + "</h1>");

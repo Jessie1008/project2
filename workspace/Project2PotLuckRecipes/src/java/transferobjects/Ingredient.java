@@ -1,4 +1,4 @@
-package potluck.domain;
+package transferobjects;
 
 /**
  * Implement adding ingredients of a recipe. Date March 26, 2016

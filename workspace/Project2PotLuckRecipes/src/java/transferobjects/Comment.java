@@ -1,4 +1,4 @@
-package potluck.domain;
+package transferobjects;
 
 import java.util.Date;
 
