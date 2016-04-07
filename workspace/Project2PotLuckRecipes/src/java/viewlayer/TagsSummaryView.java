@@ -42,6 +42,8 @@ public class TagsSummaryView extends HttpServlet {
             out.println("<td>Tag Text</td>");
             out.println("</tr>");
             out.println("<table border=1;border-spacing:0;border-collapse:collapse;>");
+            out.println("<h1>Ingredient Servlet by Zhe Huang </h1>");
+            out.println("<p>Ingredient List </p>");
             TagsBusinessLogic logic = new TagsBusinessLogic();
             List<Tag> tags = logic.getAllTags();
             out.println("<table border=\"1\">");
