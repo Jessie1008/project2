@@ -7,11 +7,13 @@ package viewlayer;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import transferobjects.Ingredient;
+import businesslayer.IngredientBusinessLogic;
 /**
  *
  * @author Jessie
@@ -38,7 +40,21 @@ public class IngredientsSummaryView extends HttpServlet {
             out.println("<title>Servlet IngredientsSummaryView</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet IngredientsSummaryView at " + request.getContextPath() + "</h1>");
+//            out.println("<h1>Servlet IngredientsSummaryView at " + request.getContextPath() + "</h1>");
+            
+            IngredientBusinessLogic logic = new IngredientBusinessLogic();
+            List<Ingredient> ingredients = logic.getAllIngredients();
+            out.println("<table border=\"1\">");
+            out.println("<tr>");
+            out.println("<td>IngredientId</td>");
+            out.println("<td>Name</td>");
+            out.println("<td>Measurement</td>");
+            out.println("</tr>");       
+            for(Ingredient ingre : ingredients){
+                out.printf("<tr><td>%d</td><td>%s</td><td>%s</td></tr>",
+                    ingre.getIngredient_id(), ingre.getName(), ingre.getMeasurement());
+            }
+            out.println("</table>"); 
             out.println("</body>");
             out.println("</html>");
         }
