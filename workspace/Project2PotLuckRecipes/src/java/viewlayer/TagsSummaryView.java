@@ -11,11 +11,11 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import businesslayer.TagsBusinessLogic;
+import transferobjects.Tag;
+import java.util.List;
 
-/**
- *
- * @author Jessie
- */
+
 public class TagsSummaryView extends HttpServlet {
 
     /**
@@ -35,10 +35,25 @@ public class TagsSummaryView extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet TagsSummaryView</title>");            
+            out.println("<title>Qing Zhang</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet CategoriesSummaryView at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Tag Servlet by Qing Zhang</h1>");
+            out.println("<td>Tag Text</td>");
+            out.println("</tr>");
+            out.println("<table border=1;border-spacing:0;border-collapse:collapse;>");
+            TagsBusinessLogic logic = new TagsBusinessLogic();
+            List<Tag> tags = logic.getAllTags();
+            out.println("<table border=\"1\">");
+            out.println("<tr>");            
+           out.println("<tr><td>TagId</td><td>TagText</td></tr>");
+           
+            for (Tag tag : tags) {
+                out.println("<tr>");
+                out.println("<td>"+tag.getTagId()+"</td>");
+                out.println("<td>"+tag.getTagText()+"</td></tr>");
+             }
+            out.println("</table><br/>");
             out.println("</body>");
             out.println("</html>");
         }
