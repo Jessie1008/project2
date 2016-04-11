@@ -2,7 +2,6 @@ package transferobjects;
 
 
 import java.util.ArrayList;
-import java.util.Date;
 /**
  * Implementation of the recipe.
  * 
@@ -16,15 +15,15 @@ import java.util.Date;
 public class Recipe {
 	
 	/** 
-	 * Attribute to get track the value of id 
-	 */
-	private static int id_counter = 10001;
-	
-	/** 
 	 * Attribute to store recipe Id 
 	 */
 	private int recipeId;
 	
+        /** 
+	 * Attribute to store member Id 
+	 */
+	private int memberId;
+        
 	/** 
 	 * Attribute to store recipe name 
 	 */
@@ -35,10 +34,10 @@ public class Recipe {
 	 */
 	private String direction;
 	
-	/** 
-	 * Attribute to store the date of creation 
+        /** 
+	 * Attribute to store the Attribution 
 	 */
-	private Date dateAdded;
+	private String attribution;
 	
 	/** 
 	 * Attribute to store the list of tags 
@@ -59,20 +58,14 @@ public class Recipe {
 	 * Attribute to store the list of comment 
 	 */
 	private ArrayList<Comment> commentList;
-	
-	/**
-	 * Default constructor
-	 */
+        
+        
 	public Recipe(){
-		recipeId=id_counter++;
-		recipeName="";
-		dateAdded=new Date();
-		tagList=new ArrayList<>();
-		categoryList=new ArrayList<>();
-		ingredientList=new ArrayList<>();
-		commentList=new ArrayList<>();
+            tagList=new ArrayList<>();
+            categoryList=new ArrayList<>();
+            ingredientList=new ArrayList<>();
+            commentList=new ArrayList<>();
 	}
-	
 	/** 
 	 * Mutator for recipe id field
 	 * @param recipeId
@@ -80,6 +73,15 @@ public class Recipe {
 	 */
 	public void setRecipeId(int recipeId){
 		this.recipeId=recipeId;
+	}
+        
+        /** 
+	 * Mutator for member id field
+	 * @param memberId
+	 * Integer value of member id
+	 */
+	public void setMemberId(int memberId){
+		this.memberId=memberId;
 	}
 	
 	/** 
@@ -102,11 +104,11 @@ public class Recipe {
 	
 	/** 
 	 * Mutator for date of creation
-	 * @param dateAdded
-	 * Date of creation
+	 * @param attribution
+	 * String of attribution
 	 */
-	public void setDateAdded(Date dateAdded){
-		this.dateAdded=dateAdded;
+	public void setAttrubution(String attribution){
+		this.attribution=attribution;
 	}
     
 	/** 
@@ -154,6 +156,15 @@ public class Recipe {
 		return recipeId;
 	}
 	
+        /** 
+	 * Accessor for member id field 
+	 * @return memberId
+	 * Integer value for member id
+	 */
+	public int getMemberId(){
+		return memberId;
+	}
+        
 	/** 
 	 * Accessor for recipe name field 
 	 * @return recipeName
@@ -174,11 +185,11 @@ public class Recipe {
 	
 	/** 
 	 * Accessor for date of creation field 
-	 * @return dateAdded
-	 * The date of creation
+	 * @return attribution
+	 * String of attribution
 	 */
-	public Date getDateAdded(){
-		return dateAdded;
+	public String getAttribution(){
+		return attribution;
 	}
 	
 	/** 
@@ -228,7 +239,7 @@ public class Recipe {
 		text.append("Recipe Id: " + recipeId);
 		text.append("\nName: " + recipeName);
 		text.append("\nDirection: " + direction);
-		text.append("\nDate Added: " + dateAdded.toString());
+		text.append("\nAttribution: " + attribution);
 		text.append("\nTag: ");
 		for (Tag tag: tagList){
 			text.append(tag.toString());
