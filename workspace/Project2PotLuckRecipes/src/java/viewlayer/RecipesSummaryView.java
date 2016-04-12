@@ -1,7 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/* Author: Jian Liu
  */
 package viewlayer;
 
@@ -58,11 +55,11 @@ public class RecipesSummaryView extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet RecipesSummaryView</title>");            
+            out.println("<title>Jian Liu</title>");            
             out.println("</head>");
             out.println("<body>");
-             out.println("<h1>Recipe Summary View by Jian Liu</h1>");
-            out.println("<p>Recipe List </p>");
+            out.println("<h1>Recipes Servlet by Jian Liu</h1>");
+//            out.println("<p>recipes</p>");
             RecipesBusinessLogic logic = new RecipesBusinessLogic();
             List<Recipe> recipes = logic.getAllRecipes();
             out.println("<table border='1'>");

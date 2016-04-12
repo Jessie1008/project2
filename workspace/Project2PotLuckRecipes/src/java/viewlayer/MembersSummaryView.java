@@ -1,7 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/* Author: Chunyan Wang
  */
 package viewlayer;
 
@@ -38,11 +35,11 @@ public class MembersSummaryView extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet MembersSummaryView   Chunyan Wang</title>");            
+            out.println("<title>Chunyan Wang</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Member Summary View  by Chunyan Wang </h1>");
-            out.println("<p>Member List </p>");
+            out.println("<h1>Members Servlet by Chunyan Wang</h1>");
+//            out.println("<p>Member List </p>");
             MembersBusinessLogic logic=new MembersBusinessLogic();
             List<Member> members=logic.getAllMembers();
             out.println("<table border=\"1\">");

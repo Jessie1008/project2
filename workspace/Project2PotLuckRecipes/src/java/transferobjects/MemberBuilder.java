@@ -1,3 +1,5 @@
+/* Author: Chunyan Wang
+ */
 package transferobjects;
 
 /**

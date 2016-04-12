@@ -1,12 +1,7 @@
+/* Author: Zhe Huang
+ */
 package transferobjects;
 
-/**
- * Implement adding ingredients of a recipe. Date March 26, 2016
- * 
- * @author Chunyan Wang, Jian Liu, Qing Zhang, Zhe Huang
- * @version 1.0.0
- * @since 1.8.0_73
- */
 public class Ingredient {
 
 	/**

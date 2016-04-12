@@ -1,7 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/* Author: Zhe Huang
  */
 package viewlayer;
 
@@ -37,12 +34,11 @@ public class IngredientsSummaryView extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet IngredientsSummaryView</title>");            
+            out.println("<title>Zhe Huang</title>");            
             out.println("</head>");
             out.println("<body>");
-//            out.println("<h1>Servlet IngredientsSummaryView at " + request.getContextPath() + "</h1>");
-            out.println("<h1>Ingredient Summary View  by Zhe Huang </h1>");
-            out.println("<p>Ingredient List </p>");            
+            out.println("<h1>Ingredients Servlet by Zhe Huang</h1>");
+//            out.println("<p>Ingredient List </p>");            
             IngredientBusinessLogic logic = new IngredientBusinessLogic();
             List<Ingredient> ingredients = logic.getAllIngredients();
             out.println("<table border=\"1\">");

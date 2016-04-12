@@ -1,7 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/* Author: Qing Zhang
  */
 package viewlayer;
 
@@ -38,8 +35,8 @@ public class TagsSummaryView extends HttpServlet {
             out.println("<title>Qing Zhang</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Tag Summary View by Qing Zhang</h1>");
-            out.println("<td>Tag Text</td>");
+            out.println("<h1>Tags Servlet by Qing Zhang</h1>");
+//            out.println("<td>Tag Text</td>");
             out.println("</tr>");
             out.println("<table border=1;border-spacing:0;border-collapse:collapse;>");
           
