@@ -41,7 +41,8 @@ public class IngredientsSummaryView extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
 //            out.println("<h1>Servlet IngredientsSummaryView at " + request.getContextPath() + "</h1>");
-            
+            out.println("<h1>Ingredient Summary View  by Zhe Huang </h1>");
+            out.println("<p>Ingredient List </p>");            
             IngredientBusinessLogic logic = new IngredientBusinessLogic();
             List<Ingredient> ingredients = logic.getAllIngredients();
             out.println("<table border=\"1\">");

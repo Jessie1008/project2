@@ -18,6 +18,15 @@ public class Category {
 	 * Field to access category name
 	 */
 	private String categoryName;
+        
+        /**
+	 * Default constructor
+	 */
+        public Category() {
+		// TODO Auto-generated constructor stub
+		this.categoryID = 0;
+		this.categoryName = null;
+	}
 
 	/**
 	 * Constructor with two parameters

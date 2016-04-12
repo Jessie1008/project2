@@ -6,10 +6,7 @@
 package dataaccesslayer;
 
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import transferobjects.Tag;
-import javax.naming.NamingException;
 import java.util.ArrayList;
 import java.sql.PreparedStatement;
 import java.sql.Connection;
@@ -33,7 +30,7 @@ public class TagsDaoImpl implements TagsDao{
 			tags = new ArrayList<Tag>();
 			while(rs.next()){
 				Tag tag = new Tag();
-				tag.setTagId(new Integer(rs.getInt("TagId")));
+				tag.setTagID(new Integer(rs.getInt("TagId")));
 				tag.setTagText(rs.getString("TagText"));
 				
 				tags.add(tag);

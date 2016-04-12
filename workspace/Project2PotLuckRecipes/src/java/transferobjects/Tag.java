@@ -12,7 +12,7 @@ public class Tag {
 	/**
 	 * Field to access tag id
 	 */
-	private int tagId;
+	private int tagID;
 
 	/**
 	 * Field to access tag text
@@ -35,7 +35,7 @@ public class Tag {
 	 *            String of tag text
 	 */
 	public Tag(int id, String tagText) {
-		this.tagId = id;
+		this.tagID = id;
 		this.tagText = tagText;
 	}
 
@@ -44,18 +44,18 @@ public class Tag {
 	 * 
 	 * @return int return tag id
 	 */
-	public int getTagId() {
-		return tagId;
+	public int getTagID() {
+		return tagID;
 	}
 
 	/**
 	 * Setter for tag id
 	 * 
-	 * @param tagId
+	 * @param tagID
 	 *            the tag id
 	 */
-	public void setTagId(int tagId) {
-		this.tagId = tagId;
+	public void setTagID(int tagID) {
+		this.tagID = tagID;
 	}
 
 	/**
@@ -85,7 +85,7 @@ public class Tag {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append(tagId);
+		sb.append(tagID);
 		sb.append(". " + tagText + "; ");
 		return sb.toString();
 	}

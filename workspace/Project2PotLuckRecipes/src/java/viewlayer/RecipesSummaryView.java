@@ -11,11 +11,34 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import businesslayer.RecipesBusinessLogic;
+import java.util.List;
+import transferobjects.Recipe;
+import transferobjects.Tag;
+import transferobjects.Category;
+import transferobjects.Ingredient;
 
 /**
- *
- * @author Jessie
+ * Implementation of view of displaying all recipes.
+ * 
+ * @author Chunyan Wang, Jian Liu, Qing Zhang, Zhe Huang
+ * @version 1.0.0 Date April 11, 2016
+ * @since 1.8.0_73
+ * 
+ * @see java.io.IOException;
+ * @see java.io.PrintWriter;
+ * @see javax.servlet.ServletException;
+ * @see javax.servlet.http.HttpServlet;
+ * @see javax.servlet.http.HttpServletRequest;
+ * @see javax.servlet.http.HttpServletResponse;
+ * @see businesslayer.RecipesBusinessLogic;
+ * @see java.util.List;
+ * @see transferobjects.Recipe;
+ * @see transferobjects.Tag;
+ * @see transferobjects.Category;
+ * @see transferobjects.Ingredient;
  */
+
 public class RecipesSummaryView extends HttpServlet {
 
     /**
@@ -38,7 +61,47 @@ public class RecipesSummaryView extends HttpServlet {
             out.println("<title>Servlet RecipesSummaryView</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet RecipesSummaryView at " + request.getContextPath() + "</h1>");
+             out.println("<h1>Recipe Summary View by Jian Liu</h1>");
+            out.println("<p>Recipe List </p>");
+            RecipesBusinessLogic logic = new RecipesBusinessLogic();
+            List<Recipe> recipes = logic.getAllRecipes();
+            out.println("<table border='1'>");
+            out.println("<tr>");
+            out.println("<th>Recipe Id</th>");
+            out.println("<th>Member Id</th>");
+            out.println("<th>Name</th>");
+            out.println("<th>Directions</th>");
+            out.println("<th>Attributions</th>");
+            out.println("<th>Tag</th>");
+            out.println("<th>Category</th>");
+            out.println("<th>Ingredients</th>");
+            out.println("</tr>");
+            // put all recipes in the table
+            for(Recipe recipe : recipes){
+                out.printf("<tr><td>%d</td><td>%d</td><td>%s</td><td>%s</td><td>%s</td>",
+                           recipe.getRecipeId(), recipe.getMemberId(), recipe.getRecipeName(),
+                           recipe.getDirection(), recipe.getAttribution());
+                out.println("<td>");
+                // set all tags in the table
+                for (Tag tag: recipe.getTagList()){
+                    out.println("[" + tag.getTagText() + "] ");
+                }
+                out.println("</td>");
+                out.println("<td>");
+                //set all categories in the table
+                for (Category category: recipe.getCategoryList()){
+                    out.println("[" + category.getCategoryName() + "] ");
+                }
+                out.println("</td>");
+                out.println("<td>");
+                //set all ingredients in the table
+                for (Ingredient ingredient: recipe.getIngredientList()){
+                    out.println("[" + ingredient.getName() + ": " + ingredient.getMeasurement() + "] ");
+                }
+                out.println("</td>");
+                out.println("</tr>");
+            }
+            out.println("</table>");
             out.println("</body>");
             out.println("</html>");
         }

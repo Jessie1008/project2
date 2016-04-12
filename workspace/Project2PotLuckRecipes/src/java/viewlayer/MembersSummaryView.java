@@ -41,7 +41,7 @@ public class MembersSummaryView extends HttpServlet {
             out.println("<title>Servlet MembersSummaryView   Chunyan Wang</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Member Servlet by Chunyan Wang </h1>");
+            out.println("<h1>Member Summary View  by Chunyan Wang </h1>");
             out.println("<p>Member List </p>");
             MembersBusinessLogic logic=new MembersBusinessLogic();
             List<Member> members=logic.getAllMembers();

@@ -38,12 +38,11 @@ public class TagsSummaryView extends HttpServlet {
             out.println("<title>Qing Zhang</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Tag Servlet by Qing Zhang</h1>");
+            out.println("<h1>Tag Summary View by Qing Zhang</h1>");
             out.println("<td>Tag Text</td>");
             out.println("</tr>");
             out.println("<table border=1;border-spacing:0;border-collapse:collapse;>");
-            out.println("<h1>Ingredient Servlet by Zhe Huang </h1>");
-            out.println("<p>Ingredient List </p>");
+          
             TagsBusinessLogic logic = new TagsBusinessLogic();
             List<Tag> tags = logic.getAllTags();
             out.println("<table border=\"1\">");
@@ -52,7 +51,7 @@ public class TagsSummaryView extends HttpServlet {
            
             for (Tag tag : tags) {
                 out.println("<tr>");
-                out.println("<td>"+tag.getTagId()+"</td>");
+                out.println("<td>"+tag.getTagID()+"</td>");
                 out.println("<td>"+tag.getTagText()+"</td></tr>");
              }
             out.println("</table><br/>");
