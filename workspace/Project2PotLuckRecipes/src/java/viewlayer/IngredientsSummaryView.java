@@ -11,10 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import transferobjects.Ingredient;
 import businesslayer.IngredientBusinessLogic;
-/**
- *
- * @author Jessie
- */
+
 public class IngredientsSummaryView extends HttpServlet {
 
     /**
